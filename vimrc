@@ -13,6 +13,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'szw/vim-tags'
+NeoBundle 'outsmartin/haproxy.vim'
 
 call neobundle#end()
 
@@ -23,7 +24,7 @@ syntax on
 set hidden
 let g:solarized_termcolors=256
 
-set background=light
+set background=dark
 colorscheme solarized
 
 if &term =~ '256color'
@@ -33,6 +34,14 @@ if &term =~ '256color'
 	set t_ut=
 endif
 
-set tabstop=2
-set shiftwidth=2
-set noexpandtab
+" Tab and spaces settings
+set expandtab     "convert tabs to spaces
+set shiftwidth=2  "length for indentation
+set tabstop=2     "length for tabs
+set smarttab      "enable smart indetation
+set autoindent    "enable auto indentation
+
+" Search settings
+
+set hls!
+set laststatus=2
