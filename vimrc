@@ -11,9 +11,13 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'tpope/vim-rails'
 NeoBundle 'sheerun/vim-polyglot'
-NeoBundle 'szw/vim-tags'
 NeoBundle 'outsmartin/haproxy.vim'
+
+if filereadable("mybundles")
+  source mybundles
+endif
 
 call neobundle#end()
 
@@ -45,3 +49,9 @@ set autoindent    "enable auto indentation
 
 set hls!
 set laststatus=2
+set backspace=indent,eol,start    " make backspace behave normally
+
+set tags+=gems.tags
+if filereadable("myvimrc")
+  source myvimrc
+endif
