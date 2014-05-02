@@ -21,8 +21,8 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
 
-if filereadable("mybundles")
-  source mybundles
+if filereadable(expand("~/.vim/mybundles"))
+  source ~/.vim/mybundles
 endif
 
 call neobundle#end()
@@ -36,6 +36,7 @@ NeoBundleCheck
 
 syntax on
 set hidden
+set encoding=utf-8
 let mapleader = ","
 
 let g:solarized_termcolors=256
@@ -77,6 +78,6 @@ set tags+=gems.tags
 " ,rt -> regenerate ctags with gemdir and code
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
 
-if filereadable("myvimrc")
-  source myvimrc
+if filereadable(expand("~/.vim/myvimrc"))
+  source ~/.vim/myvimrc
 endif
