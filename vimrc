@@ -24,8 +24,8 @@ NeoBundle 'outsmartin/haproxy.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rodjek/vim-puppet'
 
-if filereadable(expand("~/.vim/mybundles"))
-  source ~/.vim/mybundles
+if filereadable(expand("~/.vim/users/$USER/mybundles"))
+  source ~/.vim/users/$USER/mybundles
 endif
 
 call neobundle#end()
@@ -87,8 +87,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " File tab completion ignores these file patterns
 set wildignore+=*.exe,*.swp,.DS_Store,*~,*.o
 set wildmenu
-map <leader>b :CtrlPBuffer
-map <C-b> :CtrlPBuffer
+map <leader>b :CtrlPBuffer<RETURN>
+map <C-b> :CtrlPBuffer<RETURN>
 
 " ================ Turn Off Swap Files ==============
 
@@ -113,6 +113,6 @@ map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclu
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
-if filereadable(expand("~/.vim/myvimrc"))
-  source ~/.vim/myvimrc
+if filereadable(expand("~/.vim/users/$USER/myvimrc"))
+  source ~/.vim/users/$USER/myvimrc
 endif
