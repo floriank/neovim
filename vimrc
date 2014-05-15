@@ -22,6 +22,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'rodjek/vim-puppet'
 
 if filereadable(expand("~/.vim/mybundles"))
   source ~/.vim/mybundles
@@ -86,8 +87,22 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " File tab completion ignores these file patterns
 set wildignore+=*.exe,*.swp,.DS_Store,*~,*.o
 set wildmenu
+map <leader>b :CtrlPBuffer
+map <C-b> :CtrlPBuffer
+
+" ================ Turn Off Swap Files ==============
 
 set noswapfile
+set nobackup
+set nowb
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 " ,rt -> regenerate ctags with gemdir and code
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
