@@ -20,6 +20,7 @@ NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
+NeoBundle 'scrooloose/syntastic'
 
 if filereadable(expand("~/.vim/mybundles"))
   source ~/.vim/mybundles
@@ -77,6 +78,12 @@ set tags+=gems.tags
 
 " ,rt -> regenerate ctags with gemdir and code
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+
+" ----------------------------------------------------------------------------
+"  plugin: syntastic config
+" ----------------------------------------------------------------------------
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
 
 if filereadable(expand("~/.vim/myvimrc"))
   source ~/.vim/myvimrc
