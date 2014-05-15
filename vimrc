@@ -14,6 +14,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'ervandew/supertab'
+NeoBundle 'rking/ag.vim'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
 
 " language support stuff
@@ -70,10 +71,22 @@ set scrolloff=5
 
 set laststatus=2
 set backspace=indent,eol,start    " make backspace behave normally
-set ttyfast " faster vim on fast connections 
-set ruler 
+set ttyfast " faster vim on fast connections
+set ruler
 
-set tags+=gems.tags
+autocmd BufWritePre * :%s/\s\+$//e
+highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
+match ExtraWhitespace /\s\+$/
+
+set wildmode=list:longest,full
+
+" CtrlP stuff
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" File tab completion ignores these file patterns
+set wildignore+=*.exe,*.swp,.DS_Store,*~,*.o
+set wildmenu
+
+set noswapfile
 
 " ,rt -> regenerate ctags with gemdir and code
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
