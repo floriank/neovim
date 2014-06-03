@@ -8,5 +8,6 @@ set nu!
 set mouse=a "mouse support
 set clipboard=unnamedplus,unnamed
 set nofoldenable    " disable folding
+set autoread
 
 let g:airline_powerline_fonts = 1
