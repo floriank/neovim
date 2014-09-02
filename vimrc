@@ -16,6 +16,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
+NeoBundle 'scrooloose/nerdcommenter'
 
 " language support stuff
 NeoBundle 'tpope/vim-rails'
