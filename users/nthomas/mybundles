@@ -1,4 +1,7 @@
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'bling/vim-airline'
-" NeoBundle 'jeetsukumaran/vim-buffergator'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'burnettk/vim-angular'
+NeoBundle 'claco/jasmine.vim'
+NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'claco/jasmine.vim'
