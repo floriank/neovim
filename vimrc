@@ -24,6 +24,7 @@ NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'burnettk/vim-angular'
 
 if filereadable(expand("~/.vim/users/$USER/mybundles"))
   source ~/.vim/users/$USER/mybundles
