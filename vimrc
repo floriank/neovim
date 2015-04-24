@@ -12,7 +12,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " productivity stuff
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
