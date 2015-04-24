@@ -17,9 +17,12 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
 
 " language support stuff
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-projectionist'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
 NeoBundle 'scrooloose/syntastic'
@@ -107,6 +110,8 @@ set undofile
 
 " ,rt -> regenerate ctags with gemdir and code
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
+
+map <leader>n :NERDTreeToggle<RETURN>
 
 " ----------------------------------------------------------------------------
 "  plugin: syntastic config
