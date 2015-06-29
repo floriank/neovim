@@ -15,3 +15,5 @@ set nofoldenable " disable folding
 set autoread
 
 let g:airline_powerline_fonts = 1
+let g:ruby_path="~/.rvm/bin/ruby"
+let loaded_matchparen = 1
