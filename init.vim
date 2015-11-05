@@ -18,6 +18,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'benekastah/neomake'
 
 " language support stuff
 NeoBundle 'tpope/vim-rails'
@@ -25,7 +26,6 @@ NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-projectionist'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
-NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'rodjek/vim-puppet'
 
 if filereadable(expand("~/.vim/users/$USER/mybundles"))
@@ -81,6 +81,8 @@ set ttyfast " faster vim on fast connections
 set ruler
 
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd! BufWritePost * Neomake
+set clipboard+=unnamedplus
 highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
 match ExtraWhitespace /\s\+$/
 
