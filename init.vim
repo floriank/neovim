@@ -12,17 +12,24 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " productivity stuff
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Lokaltog/powerline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
 
 " language support stuff
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rake'
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'outsmartin/haproxy.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'chase/vim-ansible-yaml'
+NeoBundle 'wting/rust.vim'
+NeoBundle 'benekastah/neomake'
+
 
 if filereadable(expand("~/.vim/users/$USER/mybundles"))
   source ~/.vim/users/$USER/mybundles
@@ -45,6 +52,10 @@ let mapleader = ","
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+set guifont=Ubuntu\ Mono\ derivative\ Powerline:10
+" set guifont=Ubuntu\ Mono
+let g:Powerline_symbols = 'fancy'
 
 if &term =~ '256color'
 	" Disable Background Color Erase (BCE) so that color schemes
@@ -107,11 +118,7 @@ set undofile
 " ,rt -> regenerate ctags with gemdir and code
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
 
-" ----------------------------------------------------------------------------
-"  plugin: syntastic config
-" ----------------------------------------------------------------------------
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
+autocmd! BufWritePost * Neomake
 
 if filereadable(expand("~/.vim/users/$USER/myvimrc"))
   source ~/.vim/users/$USER/myvimrc
