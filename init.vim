@@ -13,12 +13,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " productivity stuff
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/powerline'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'flazz/vim-colorschemes' "all colorschemes there are
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'benekastah/neomake'
 
 " language support stuff
 NeoBundle 'tpope/vim-rails'
@@ -29,7 +32,7 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'wting/rust.vim'
 NeoBundle 'benekastah/neomake'
-
+NeoBundle 'tpope/vim-projectionist'
 
 if filereadable(expand("~/.vim/users/$USER/mybundles"))
   source ~/.vim/users/$USER/mybundles
@@ -88,6 +91,8 @@ set ttyfast " faster vim on fast connections
 set ruler
 
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd! BufWritePost * Neomake
+set clipboard+=unnamedplus
 highlight ExtraWhitespace ctermbg=darkblue guibg=darkblue
 match ExtraWhitespace /\s\+$/
 
@@ -119,6 +124,7 @@ set undofile
 map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclude=log -R * `rvm gemdir`/gems/* `rvm gemdir`/bundler/gems/*<CR><C-M>
 
 autocmd! BufWritePost * Neomake
+map <leader>n :NERDTreeToggle<RETURN>
 
 if filereadable(expand("~/.vim/users/$USER/myvimrc"))
   source ~/.vim/users/$USER/myvimrc

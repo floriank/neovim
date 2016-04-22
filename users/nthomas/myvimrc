@@ -1,13 +1,19 @@
 colorscheme molokai
 
-map <leader>n :NERDTreeToggle<RETURN>
 map <F4> :set nu!<CR>
 map <F5> <ESC>gg=G<CR>
+nmap <F8> :TagbarToggle<CR>
+nnoremap <Leader>= :Tabularize /=<CR> 
+vnoremap <Leader>= :Tabularize /=<CR>
+nnoremap <Leader>0 :Tabularize /=><CR> 
+vnoremap <Leader>0 :Tabularize /=><CR>
 
 set nu!
 set mouse=a "mouse support
 set clipboard=unnamedplus,unnamed
-set nofoldenable    " disable folding
+set nofoldenable " disable folding
 set autoread
 
 let g:airline_powerline_fonts = 1
+let g:ruby_path="~/.rvm/bin/ruby"
+let loaded_matchparen = 1
