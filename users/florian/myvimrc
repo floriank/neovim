@@ -1,0 +1,32 @@
+" Relative numbering
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+    set number
+  else
+    set rnu
+  endif
+endfunc
+
+" Toggle between normal and relative numbering.
+noremap <leader>r :call NumberToggle()<cr>
+
+call neobundle#begin()
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'fatih/vim-go'
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'zchee/deoplete-go', {'build': {'unix': 'make'}}
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'mattn/emmet-vim'
+call neobundle#end()
+
+" goimports
+let g:go_fmt_command = "goimports"
+
+" ignore certain files
+let NERDTreeIgnore=['\.map$', '\.log$']
+
+"remap escape to jk
+inoremap jk <Esc>
+
+set number

@@ -34,8 +34,8 @@ NeoBundle 'wting/rust.vim'
 NeoBundle 'benekastah/neomake'
 NeoBundle 'tpope/vim-projectionist'
 
-if filereadable(expand("~/.vim/users/$USER/mybundles"))
-  source ~/.vim/users/$USER/mybundles
+if filereadable(expand("$XDG_CONFIG_HOME/nvim/users/$USER/mybundles"))
+  source $XDG_CONFIG_HOME/users/$USER/mybundles
 endif
 
 call neobundle#end()
@@ -126,6 +126,6 @@ map <leader>rt :!ctags --extra=+f --languages=-javascript --exclude=.git --exclu
 autocmd! BufWritePost * Neomake
 map <leader>n :NERDTreeToggle<RETURN>
 
-if filereadable(expand("~/.vim/users/$USER/myvimrc"))
-  source ~/.vim/users/$USER/myvimrc
+if filereadable(expand("$XDG_CONFIG_HOME/nvim/users/$USER/myvimrc"))
+  source $XDG_CONFIG_HOME/nvim/users/$USER/myvimrc
 endif
